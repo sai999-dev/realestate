@@ -1,0 +1,27 @@
+services:
+  - type: web
+    name: real-estate-portal
+    env: node
+    region: oregon
+    plan: free
+    rootDir: real-estate-portal
+    buildCommand: npm install
+    startCommand: npm start
+    envVars:
+      - key: NODE_ENV
+        value: production
+      - key: PORT
+        value: 10000
+      - key: SUPABASE_URL
+        sync: false
+      - key: SUPABASE_ANON_KEY
+        sync: false
+      - key: SUPABASE_SERVICE_ROLE_KEY
+        sync: false
+      - key: DATABASE_TABLE
+        value: property_inquiries
+      - key: FRONTEND_URL
+        sync: false
+      - key: API_BASE_URL
+        sync: false
+    healthCheckPath: /api
