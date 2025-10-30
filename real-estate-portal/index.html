@@ -1,0 +1,339 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Real Estate Portal - Your Gateway to Property Solutions</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <!-- Header -->
+    <header class="header">
+        <div class="container">
+            <div class="header-content">
+                <h1 class="logo">🏢 Real Estate Portal</h1>
+                <nav class="nav">
+                    <a href="#home" class="nav-link active" data-section="home">Home</a>
+                    <a href="#form" class="nav-link" data-section="form">Customer Form</a>
+                    <a href="#api" class="nav-link" data-section="api">API Documentation</a>
+                </nav>
+            </div>
+        </div>
+    </header>
+
+    <main>
+        <!-- Home Section -->
+        <section id="home" class="section active">
+            <div class="hero">
+                <div class="container">
+                    <div class="hero-content">
+                        <h2 class="hero-title">Find Your Perfect Property</h2>
+                        <p class="hero-subtitle">Connect with real estate opportunities tailored to your needs. Whether you're looking for residential, commercial, or industrial properties, we're here to help.</p>
+                        <button class="btn btn--primary btn--lg" onclick="navigateToSection('form')">Submit Your Requirements</button>
+                    </div>
+                </div>
+            </div>
+
+            <div class="container">
+                <div class="features">
+                    <div class="card">
+                        <div class="card__body">
+                            <h3 class="feature-icon">📋</h3>
+                            <h4>Easy Inquiry Process</h4>
+                            <p>Submit your real estate requirements through our simple and intuitive form. Let us know exactly what you're looking for.</p>
+                        </div>
+                    </div>
+                    <div class="card">
+                        <div class="card__body">
+                            <h3 class="feature-icon">🔍</h3>
+                            <h4>Comprehensive Search</h4>
+                            <p>From residential homes to commercial spaces and land, we help you find the perfect property that matches your budget and timeline.</p>
+                        </div>
+                    </div>
+                    <div class="card">
+                        <div class="card__body">
+                            <h3 class="feature-icon">🔌</h3>
+                            <h4>Developer API Access</h4>
+                            <p>Access customer inquiry data programmatically through our RESTful API endpoints. Perfect for integration with your systems.</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="info-section">
+                    <h3>How It Works</h3>
+                    <div class="steps">
+                        <div class="step">
+                            <div class="step-number">1</div>
+                            <h4>Fill the Form</h4>
+                            <p>Provide your details and property requirements</p>
+                        </div>
+                        <div class="step">
+                            <div class="step-number">2</div>
+                            <h4>We Process</h4>
+                            <p>Our team reviews your inquiry</p>
+                        </div>
+                        <div class="step">
+                            <div class="step-number">3</div>
+                            <h4>Get Matched</h4>
+                            <p>Receive tailored property recommendations</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Customer Form Section -->
+        <section id="form" class="section">
+            <div class="container">
+                <div class="form-container">
+                    <h2>Real Estate Inquiry Form</h2>
+                    <p class="form-description">Please fill out the form below with your property requirements. All fields marked with <span class="required">*</span> are required.</p>
+                    
+                    <form id="customerForm" class="customer-form">
+                        <div class="form-row">
+                            <div class="form-group">
+                                <label class="form-label" for="name">Full Name <span class="required">*</span></label>
+                                <input type="text" id="name" name="name" class="form-control" required>
+                            </div>
+                            <div class="form-group">
+                                <label class="form-label" for="email">Email Address <span class="required">*</span></label>
+                                <input type="email" id="email" name="email" class="form-control" required>
+                            </div>
+                        </div>
+
+                        <div class="form-row">
+                            <div class="form-group">
+                                <label class="form-label" for="contact">Contact Number <span class="required">*</span></label>
+                                <input type="tel" id="contact" name="contact" class="form-control" required>
+                            </div>
+                            <div class="form-group">
+                                <label class="form-label" for="propertyType">Property Type</label>
+                                <select id="propertyType" name="propertyType" class="form-control">
+                                    <option value="">Select Property Type</option>
+                                    <option value="Residential">Residential</option>
+                                    <option value="Commercial">Commercial</option>
+                                    <option value="Industrial">Industrial</option>
+                                    <option value="Land">Land</option>
+                                </select>
+                            </div>
+                        </div>
+
+                        <div class="form-row">
+                            <div class="form-group">
+                                <label class="form-label" for="budgetRange">Budget Range</label>
+                                <select id="budgetRange" name="budgetRange" class="form-control">
+                                    <option value="">Select Budget Range</option>
+                                    <option value="Under $100K">Under $100K</option>
+                                    <option value="$100K-$500K">$100K - $500K</option>
+                                    <option value="$500K-$1M">$500K - $1M</option>
+                                    <option value="$1M+">$1M+</option>
+                                </select>
+                            </div>
+                            <div class="form-group">
+                                <label class="form-label" for="timeline">Timeline</label>
+                                <select id="timeline" name="timeline" class="form-control">
+                                    <option value="">Select Timeline</option>
+                                    <option value="Immediate">Immediate</option>
+                                    <option value="1-3 months">1-3 months</option>
+                                    <option value="3-6 months">3-6 months</option>
+                                    <option value="6+ months">6+ months</option>
+                                </select>
+                            </div>
+                        </div>
+
+                        <div class="form-group">
+                            <label class="form-label" for="preferredLocation">Preferred Location</label>
+                            <input type="text" id="preferredLocation" name="preferredLocation" class="form-control">
+                        </div>
+
+                        <div class="form-group">
+                            <label class="form-label" for="needs">Real Estate Needs <span class="required">*</span></label>
+                            <textarea id="needs" name="needs" class="form-control" rows="4" placeholder="Please describe your property requirements in detail..." required></textarea>
+                        </div>
+
+                        <div class="form-group">
+                            <label class="form-label" for="additionalDetails">Additional Details</label>
+                            <textarea id="additionalDetails" name="additionalDetails" class="form-control" rows="3" placeholder="Any other requirements or preferences..."></textarea>
+                        </div>
+
+                        <div class="form-actions">
+                            <button type="submit" class="btn btn--primary btn--lg">Submit Inquiry</button>
+                            <button type="reset" class="btn btn--secondary">Reset Form</button>
+                        </div>
+                    </form>
+
+                    <div id="formMessage" class="form-message" style="display: none;"></div>
+                </div>
+            </div>
+        </section>
+
+        <!-- API Documentation Section -->
+        <section id="api" class="section">
+            <div class="container">
+                <h2>API Documentation</h2>
+                <p class="api-intro">Access customer inquiry data programmatically through our RESTful API endpoints. All endpoints return JSON formatted data.</p>
+
+                <div class="api-endpoints">
+                    <!-- Customers Endpoint -->
+                    <div class="card api-card">
+                        <div class="card__body">
+                            <div class="endpoint-header">
+                                <span class="method method-get">GET</span>
+                                <code class="endpoint-url">/api/customers</code>
+                            </div>
+                            <p class="endpoint-description">Retrieve all customer inquiry data submitted through the form.</p>
+                            
+                            <h4>Response Format</h4>
+                            <p>Returns a JSON array of customer objects with all inquiry details.</p>
+
+                            <div class="code-example">
+                                <div class="code-header">
+                                    <span>Example Response</span>
+                                    <button class="btn btn--sm btn--outline" onclick="testEndpoint('customers')">Test Endpoint</button>
+                                </div>
+                                <pre><code id="customersExample">Loading...</code></pre>
+                            </div>
+
+                            <h4>cURL Example</h4>
+                            <div class="code-example">
+                                <pre><code>curl -X GET "https://your-domain.com/api/customers" \
+  -H "Accept: application/json"</code></pre>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Schema Endpoint -->
+                    <div class="card api-card">
+                        <div class="card__body">
+                            <div class="endpoint-header">
+                                <span class="method method-get">GET</span>
+                                <code class="endpoint-url">/api/schema</code>
+                            </div>
+                            <p class="endpoint-description">Get the data schema and field definitions for customer records.</p>
+                            
+                            <h4>Response Format</h4>
+                            <p>Returns a JSON object describing the structure and data types of customer records.</p>
+
+                            <div class="code-example">
+                                <div class="code-header">
+                                    <span>Example Response</span>
+                                    <button class="btn btn--sm btn--outline" onclick="testEndpoint('schema')">Test Endpoint</button>
+                                </div>
+                                <pre><code id="schemaExample">Loading...</code></pre>
+                            </div>
+
+                            <h4>Field Descriptions</h4>
+                            <table class="schema-table">
+                                <thead>
+                                    <tr>
+                                        <th>Field</th>
+                                        <th>Type</th>
+                                        <th>Description</th>
+                                        <th>Required</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <tr>
+                                        <td><code>id</code></td>
+                                        <td>integer</td>
+                                        <td>Unique identifier for the record</td>
+                                        <td>Auto-generated</td>
+                                    </tr>
+                                    <tr>
+                                        <td><code>name</code></td>
+                                        <td>string</td>
+                                        <td>Customer's full name</td>
+                                        <td>Yes</td>
+                                    </tr>
+                                    <tr>
+                                        <td><code>email</code></td>
+                                        <td>string</td>
+                                        <td>Valid email address</td>
+                                        <td>Yes</td>
+                                    </tr>
+                                    <tr>
+                                        <td><code>contact</code></td>
+                                        <td>string</td>
+                                        <td>Phone number</td>
+                                        <td>Yes</td>
+                                    </tr>
+                                    <tr>
+                                        <td><code>needs</code></td>
+                                        <td>string</td>
+                                        <td>Detailed real estate requirements</td>
+                                        <td>Yes</td>
+                                    </tr>
+                                    <tr>
+                                        <td><code>property_type</code></td>
+                                        <td>string</td>
+                                        <td>Type of property (Residential, Commercial, Industrial, Land)</td>
+                                        <td>No</td>
+                                    </tr>
+                                    <tr>
+                                        <td><code>budget_range</code></td>
+                                        <td>string</td>
+                                        <td>Price range preference</td>
+                                        <td>No</td>
+                                    </tr>
+                                    <tr>
+                                        <td><code>preferred_location</code></td>
+                                        <td>string</td>
+                                        <td>Desired location or area</td>
+                                        <td>No</td>
+                                    </tr>
+                                    <tr>
+                                        <td><code>timeline</code></td>
+                                        <td>string</td>
+                                        <td>When property is needed</td>
+                                        <td>No</td>
+                                    </tr>
+                                    <tr>
+                                        <td><code>additional_details</code></td>
+                                        <td>string</td>
+                                        <td>Extra requirements or notes</td>
+                                        <td>No</td>
+                                    </tr>
+                                    <tr>
+                                        <td><code>submitted_at</code></td>
+                                        <td>string</td>
+                                        <td>ISO 8601 timestamp of submission</td>
+                                        <td>Auto-generated</td>
+                                    </tr>
+                                </tbody>
+                            </table>
+
+                            <h4>cURL Example</h4>
+                            <div class="code-example">
+                                <pre><code>curl -X GET "https://your-domain.com/api/schema" \
+  -H "Accept: application/json"</code></pre>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="api-notes">
+                    <h3>Integration Notes</h3>
+                    <ul>
+                        <li>All API endpoints return JSON formatted data</li>
+                        <li>Timestamps are in ISO 8601 format (UTC)</li>
+                        <li>Customer data is stored in Supabase database</li>
+                        <li>Real-time data synchronization with Supabase backend</li>
+                        <li>In production, implement proper authentication and authorization</li>
+                    </ul>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <p>&copy; 2025 Real Estate Portal. All rights reserved.</p>
+            <p>Connecting people with their perfect properties.</p>
+        </div>
+    </footer>
+
+    <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+    <script src="app.js"></script>
+</body>
+</html>
