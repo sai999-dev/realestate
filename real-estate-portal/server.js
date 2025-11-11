@@ -134,6 +134,20 @@ app.get('/api/schema', (req, res) => {
           required: false,
           example: 'Must have parking space'
         },
+        industry: {
+          type: 'string',
+          description: 'Customer industry',
+          required: false,
+          enum: ['Home Health and Hospice', 'Finance', 'Insurance', 'Handyman Services'],
+          example: 'Finance'
+        },
+        zipcode: {
+          type: 'string',
+          description: 'Customer zip code',
+          required: false,
+          max_length: 10,
+          example: '12345'
+        },
         submitted_at: {
           type: 'timestamp with time zone',
           description: 'ISO 8601 timestamp when inquiry was submitted',
@@ -144,7 +158,7 @@ app.get('/api/schema', (req, res) => {
         }
       },
       required_fields: ['name', 'email', 'needs'],
-      optional_fields: ['contact', 'property_type', 'budget_range', 'preferred_location', 'timeline', 'additional_details']
+      optional_fields: ['contact', 'property_type', 'budget_range', 'preferred_location', 'timeline', 'additional_details', 'industry', 'zipcode']
     };
 
     res.json({
@@ -239,7 +253,9 @@ app.post('/api/inquiries', async (req, res) => {
       budget_range,
       preferred_location,
       timeline,
-      additional_details
+      additional_details,
+      industry,
+      zipcode
     } = req.body;
 
     // Validate required fields
@@ -269,7 +285,9 @@ app.post('/api/inquiries', async (req, res) => {
       budget_range: budget_range || null,
       preferred_location: preferred_location?.trim() || null,
       timeline: timeline || null,
-      additional_details: additional_details?.trim() || null
+      additional_details: additional_details?.trim() || null,
+      industry: industry || null,
+      zipcode: zipcode?.trim() || null
       // submitted_at will be automatically set by database (DEFAULT NOW())
     };
 

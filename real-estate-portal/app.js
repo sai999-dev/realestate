@@ -39,6 +39,8 @@ document.addEventListener('DOMContentLoaded', () => {
       timeline: document.getElementById('timeline')?.value || null,
       needs: document.getElementById('needs')?.value.trim() || null,
       additional_details: document.getElementById('additionalDetails')?.value.trim() || null,
+      industry: document.getElementById('industry')?.value || null,
+      zipcode: document.getElementById('zipcode')?.value.trim() || null,
       source: 'real_estate_portal'
     };
 

@@ -12,6 +12,8 @@ CREATE TABLE IF NOT EXISTS customers (
     preferred_location TEXT,
     timeline TEXT,
     additional_details TEXT,
+    industry TEXT,
+    zipcode TEXT,
     submitted_at TIMESTAMP WITH TIME ZONE DEFAULT NOW()
 );
 
@@ -48,5 +50,7 @@ COMMENT ON COLUMN customers.budget_range IS 'Price range preference';
 COMMENT ON COLUMN customers.preferred_location IS 'Desired location or area';
 COMMENT ON COLUMN customers.timeline IS 'When property is needed';
 COMMENT ON COLUMN customers.additional_details IS 'Extra requirements or notes';
+COMMENT ON COLUMN customers.industry IS 'Customer industry (Home Health and Hospice, Finance, Insurance, Handyman Services)';
+COMMENT ON COLUMN customers.zipcode IS 'Customer zip code';
 COMMENT ON COLUMN customers.submitted_at IS 'Timestamp when inquiry was submitted';
 
